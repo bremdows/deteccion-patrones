@@ -1,3 +1,17 @@
+%==========================================================================
+%
+%	Project: NN_Pattern_FPGA
+%   Steffen Reckels, Hochschule Bonn-Rhein-Sieg, 2021
+%   Based on project NN_RGB_FPGA by Thomas Florkowski
+%   Release: Marco Winzker, Hochschule Bonn-Rhein-Sieg, 4.02.2022
+%
+%===============================Description================================
+% reads the test image 
+% breaks down the test image into a 49x1 column vector for each pixel with surrounding pixels having width of 3 Pixels 
+% gives network prediction for each of the 49x1 column vector (function[prediction] = networkPrediction(X, network) by Thomas Florkowski) 
+% reconstructs the test image with network prediction and sets symbol as color if detected
+%==========================================================================
+%
 function picture = imagePrediction(predictionImagePath, predictionImageName, format, trainedNetwork)
     % Tamaño del marco de entrada
     frameX = 7;
