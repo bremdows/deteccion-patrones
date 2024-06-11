@@ -77,43 +77,43 @@ for i = 1:length(directory);
       %takes only one layer of the rgb matrix since the image is in grayscale 
       inputPicture = inputPicture(:,:,1);
       %checks if the image is in the file; first checks the length and than the name   
-      if length(name_dot) <= length(name) && name_dot  == name(1:length(name_dot))
+      if length(name_dot) <= length(name) & name_dot  == name(1:length(name_dot))
         labelArray = [labelArray zeros(synmbolsNumber,1) + zero];
         labelArray(position_dot,size(labelArray, 2)) = one;
         imageArray(:,:,size(labelArray, 2)) = inputPicture; 
         number_dot = number_dot + 1;
-      elseif length(name_circle) <= length(name) && name_circle  == name(1:length(name_circle))
+      elseif length(name_circle) <= length(name) & name_circle  == name(1:length(name_circle))
         labelArray = [labelArray zeros(synmbolsNumber,1) + zero];
         labelArray(position_circle,size(labelArray, 2)) = one;
         imageArray(:,:,size(labelArray, 2)) = inputPicture;  
         number_circle = number_circle + 1;
-        elseif length(name_ex) <= length(name) &&  name_ex  == name(1:length(name_ex))
+        elseif length(name_ex) <= length(name) &  name_ex  == name(1:length(name_ex))
         labelArray = [labelArray zeros(synmbolsNumber,1) + zero];
         labelArray(position_ex,size(labelArray, 2)) = one;
         imageArray(:,:,size(labelArray, 2)) = inputPicture;
         number_ex = number_ex + 1;
-      elseif length(name_plus) <= length(name) && name_plus  == name(1:length(name_plus))
+      elseif length(name_plus) <= length(name) & name_plus  == name(1:length(name_plus))
         labelArray = [labelArray zeros(synmbolsNumber,1) + zero];
         labelArray(position_plus,size(labelArray, 2)) = one;
         imageArray(:,:,size(labelArray, 2)) = inputPicture;
         number_plus = number_plus + 1;
-      elseif length(name_blank) <= length(name) && name_blank  == name(1:length(name_blank))
+      elseif length(name_blank) <= length(name) & name_blank  == name(1:length(name_blank))
         labelArray = [labelArray zeros(synmbolsNumber,1) + zero];
         % labelArray is zero
         imageArray(:,:,size(labelArray, 2)) = inputPicture;
         number_blank = number_blank+ 1;
       else    
         fprintf('Is not matching any shape %s\n',file)
-      endif
+      end
     else 
       fprintf('Format is not matching: %s\n',file)
-    endif
+    end
   else
-    if     ((file = '.'))  % current directory
-    elseif ((file = '..')) % up one directory
+    if ((file == '.'))  % current directory
+    elseif ((file == '..')) % up one directory
     else   fprintf('Format is not matching: %s\n',file)
-    endif
-  endif
+    end
+  end
 end
 %
 fprintf('Finished reading images\n')
