@@ -19,7 +19,7 @@ fprintf('Starting script to train network\n')
 %
 %=============== Constants Definition =================
 %
-epochs = 50;   %Number of epochs you want to train the network
+epochs = 400;   %Number of epochs you want to train the network
 alpha = 0.00001;%Learning rate for the training process
 %
 % use always the same random numbers for reproducibility

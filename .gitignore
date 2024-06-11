@@ -1,1 +1,3 @@
+# Archivos que no serán tomados en cuenta por la escucha de git
+# .asv (archivo de autoguardado MATLAB)
 *.asv
